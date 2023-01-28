@@ -12,11 +12,12 @@ def tokenize(filepath):
     return tokens
 
 
+# O(n) where n is the number of tokens
 def computeWordFrequencies(tokens):
     cmap = {}
     for word in tokens:
         if word in cmap:
-            cmap[word] = cmap.get(word) + 1
+            cmap[word] = cmap[word] + 1
         else:
             cmap[word] = 1
     return cmap
