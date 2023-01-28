@@ -6,8 +6,8 @@ from collections import Counter
 def tokenize(filepath):
     with open(filepath, 'r') as f:
         text = f.read()
-        text = text.lower() # convert text to lowercase
-        tokens = re.findall(r'\b\w+\b', text) # use regex to find all alphanumeric tokens
+        text = text.lower()
+        tokens = re.findall(r'\b\w+\b', text)
     return tokens
 
 # O(n) where n is the number of tokens in the list
