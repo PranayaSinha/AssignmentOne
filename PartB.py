@@ -13,9 +13,6 @@ def tokenize(file_path):
     return tokens
 
 def common_tokens(file1, file2):
-    """
-    Complexity: O(n), where n is the number of characters in the text files combined.
-    """
     tokens1 = tokenize(file1)
     tokens2 = tokenize(file2)
     common = tokens1.intersection(tokens2)
@@ -23,7 +20,7 @@ def common_tokens(file1, file2):
 
 if __name__ == '__main__':
     if len(sys.argv) != 3:
-        print("Please provide two text file paths as arguments.")
+        print("Two text files needed")
     else:
         file1 = sys.argv[1]
         file2 = sys.argv[2]
