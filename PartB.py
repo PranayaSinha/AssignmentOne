@@ -9,7 +9,8 @@ def tokenize(file_path):
     with open(file_path, 'r') as f:
         for line in f:
             for token in re.findall(r'\b\w+\b', line.lower()):
-                tokens.add(token)
+                if token.isalnum():
+                    tokens.add(token)
     return tokens
 
 def common_tokens(file1, file2):
