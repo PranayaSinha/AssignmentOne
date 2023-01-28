@@ -1,10 +1,10 @@
 import re
 import sys
-from collections import Counter
 
 
 # O(n) where n is the number of characters in the text file
 def tokenize(filepath):
+    tokens = set()
     with open(filepath, 'r') as f:
         text = f.read()
         text = text.lower()
@@ -13,7 +13,13 @@ def tokenize(filepath):
 
 
 def computeWordFrequencies(tokens):
-    return Counter(tokens)
+    cmap = {}
+    for word in tokens:
+        if word in cmap:
+            cmap[word] = cmap.get(word) + 1
+        else:
+            cmap[word] = 1
+    return cmap
 
 
 # O(n log n) where n is the number of tokens in the list
